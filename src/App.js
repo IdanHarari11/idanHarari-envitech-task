@@ -6,8 +6,10 @@ import NavigationBar from "./components/NavigationBar";
 
 const App = () => {
   const [legent, setLegent] = useState(0);
-  const legentChangeHandler = (LegentId) => {
+  const [monitorTypeName, setMonitorTypeName] = useState(0);
+  const legentChangeHandler = (LegentId, MonitorTypeName) => {
     setLegent(LegentId);
+    setMonitorTypeName(MonitorTypeName);
   };
       
   return (
@@ -115,7 +117,7 @@ const App = () => {
           <div className="formbg-outer">
             <div className="formbg">
               <div className="formbg-inner padding-horizontal--48">
-                <Legent LegentId={legent} />
+                <Legent LegentId={legent} MonitorTypeName={monitorTypeName} />
               </div>
             </div>
             <div className="footer-link padding-top--24">

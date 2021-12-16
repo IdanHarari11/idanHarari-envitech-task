@@ -12,8 +12,8 @@ const NavigationBar = ({ onLegentChange }) => {
     const legends = data.default;
 
     // Output to app.js for input to Legent;
-    const legendHandle = (LegentId) => {
-        onLegentChange(LegentId);
+    const legendHandle = (LegentId, MonitorTypeName) => {
+        onLegentChange(LegentId, MonitorTypeName);
     };
 
     return (
@@ -46,7 +46,7 @@ const NavigationBar = ({ onLegentChange }) => {
                         mnitor.MonitorTypeId === mnitorType.Id && (
                           <NavDropdown.Item
                             key={ind}
-                            onClick={() => legendHandle(mnitorType.LegentId)}
+                            onClick={() => legendHandle(mnitorType.LegentId, mnitor.Name)}
                           >
                             {mnitor.Name}
                           </NavDropdown.Item>
